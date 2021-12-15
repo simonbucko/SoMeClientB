@@ -1,0 +1,5 @@
+export const SERVER_URL = "http://localhost:8081"
+export const SRC_HOST = "facebookIsNotMeta"
+export const ADD = "Add"
+export const ACCEPT = "Accept"
+export const DENY = "Deny"

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <h2>SEND FRIENDSHIP REQUEST</h2>
+    <h3 id="profileEmail"></h3>
+    <div class="requestFormWrapper">
+        <form id="requestForm" method="post">
+            <label for="femail">Email:</label><br>
+            <input type="text" id="femail" name="femail" placeholder="example@gmail.com"><br>
+            <label for="fhost">Host:</label><br>
+            <input type="text" id="fhost" name="fhost"><br><br>
+            <div id="statusMsg">Your request has been sent</div>
+            <button type="submit">Send Request</button>
+        </form>
+    </div>
+    <script type="module" src="/shared/js/constants.js"></script>
+    <script type="module" src="./index.js"></script>
+    <script src="/shared/js/nameHeader.js"></script>
+</body>
+</html>
