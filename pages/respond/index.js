@@ -75,5 +75,30 @@ const handleAccept = async (requestIndex) => {
 }
 
 const handleDeny = async (requestIndex) => {
-
+    const request = requestsReceived[requestIndex];
+    const { email } = JSON.parse(sessionStorage.getItem("user"));
+    const requestData = {
+        method: DENY,
+        sender: email,
+        srcHost: SRC_HOST,
+        recipient: request.email,
+        rcpHost: request.host,
+        version: 1
+    }
+    fetch(`${SERVER_URL}/api/response`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(requestData),
+    })
+        .then(response => response.json()
+        )
+        .then(data => {
+            fetchAndRenderFriendsList();
+            alert(data.phrase)
+        })
+        .catch(error => {
+            console.log(error)
+        });
 }
